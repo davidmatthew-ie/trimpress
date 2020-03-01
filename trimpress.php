@@ -4,7 +4,7 @@
  *
  * @package           TrimPress
  * Plugin Name:       TrimPress
- * Description:       Trim some of the unnecessary cruft from your theme.
+ * Description:       Trim some of the unnecessary cruft from WordPress for a lighter, more impressive theme.
  * Version:           1.0.0
  * Author:            David Matthew
  * Author URI:        https://davidmatthew.ie
@@ -14,7 +14,7 @@
  * Domain Path:       /languages
  */
 
-// Define the plugiin namespace.
+// Define the plugin namespace.
 Namespace TrimPress;
 
 // Exit if accessed directly.
@@ -24,3 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // Current plugin version, manually defined for performance reasons.
 define( 'TRIMPRESS_VERSION', '1.0.0' );
+
+// Load the core plugin class and create a plugin instance.
+require plugin_dir_path( __FILE__ ) . 'classes/class-trimpress.php';
+new TrimPress();
