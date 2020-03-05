@@ -33,51 +33,56 @@ class Settings {
 	 * Initialize the settings section.
 	 */
 	public function create_settings() {
-		// register a new setting
 		register_setting( 'trimpress', 'trimpress_settings' );
 	
-		// register a new section in the "reading" page
-		add_settings_section(
-			'trimpress_settings_section',
-			'TrimPress Settings Section',
-			array( $this, 'settings_section_cb' ),
-			'trimpress'
-		);
+		add_settings_section( 'section_main', '', '', 'trimpress' );
 	
-		// register a new field in the trimpress_settings_section
 		add_settings_field(
-			'trimpress_field_1',
-			'TrimPress Field 1',
-			array( $this, 'settings_field_cb_1' ),
+			'wlwmanifest',
+			'WLW Manifest Link',
+			array( $this, 'wlwmanifest_cb' ),
 			'trimpress',
-			'trimpress_settings_section'
+			'section_main'
+		);
+
+		add_settings_field(
+			'rsd',
+			'RSD Link',
+			array( $this, 'rsd_cb' ),
+			'trimpress',
+			'section_main'
 		);
 	}
 
-	
-	public function settings_section_cb() {
-		echo '<p>This bit seems a little redundant.</p>';
-	}
-
-	public function settings_field_cb_1() {
+	/**
+	 * The wlwmanifest field callback.
+	 */
+	public function wlwmanifest_cb() {
 		$options = get_option( 'trimpress_settings' );
 		?>
-		
-		<select id="<?php echo esc_attr( $options['trimpress_field_1'] ); ?>" name="trimpress_settings[trimpress_field_1]">
-			
-			<option value="yes" <?php echo isset( $options['trimpress_field_1'] ) ? ( selected( $options['trimpress_field_1'], 'yes', false ) ) : ( '' ); ?>>
-				<?php esc_html_e( 'Yes', 'trimpress' ); ?>
-			</option>
-			
-			<option value="no" <?php echo isset( $options['trimpress_field_1'] ) ? ( selected( $options['trimpress_field_1'], 'no', false ) ) : ( '' ); ?>>
-				<?php esc_html_e( 'No', 'trimpress' ); ?>
-			</option>
 
-			<option value="maybe" <?php echo isset( $options['trimpress_field_1'] ) ? ( selected( $options['trimpress_field_1'], 'maybe', false ) ) : ( '' ); ?>>
-				<?php esc_html_e( 'Maybe', 'trimpress' ); ?>
-			</option>
-		
-		</select>
+		<input type="checkbox" name="trimpress_settings[wlwmanifest]" value="1" <?php checked( isset( $options['wlwmanifest'] ) ); ?>>
+  		
+		<label for="trimpress_settings[wlwmanifest]"><?php _e( 'Remove', 'trimpress' ); ?></label>
+
+		<p class="description"><?php _e( 'This will remove the link to <code>wlwmanifest.xml</code>, used for <strong>Windows Live Writer</strong> support (a discontinued desktop application).', 'trimpress' ); ?></p>
+
+		<?php
+	}
+
+	/**
+	 * The rsd field callback.
+	 */
+	public function rsd_cb() {
+		$options = get_option( 'trimpress_settings' );
+		?>
+
+		<input type="checkbox" name="trimpress_settings[rsd]" value="1" <?php checked( isset( $options['rsd'] ) ); ?>>
+  		
+		<label for="trimpress_settings[rsd]"><?php _e( 'Remove', 'trimpress' ); ?></label>
+
+		<p class="description"><?php _e( 'This will remove the <strong>Really Simple Discovery</strong> (RSD) service endpoint link used for automatic pingbacks.', 'trimpress' ); ?></p>
+
 		<?php
 	}
 }

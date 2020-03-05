@@ -51,12 +51,6 @@ class Admin {
         if ( ! current_user_can( 'manage_options' ) ) {
             return;
 		}
-		
-		if ( isset( $_GET['settings-updated'] ) ) {
-			add_settings_error( 'trimpress_messages', 'trimpress_message', __( 'Settings Saved', 'trimpress' ), 'updated' );
-		}
-
-		//settings_errors( 'trimpress_messages' );
 
         ?>
 
