@@ -178,7 +178,7 @@ class Settings {
   		
 		<label for="trimpress_settings[wc_cart_fragments]"><?php _e( 'Remove', 'trimpress' ); ?></label>
 
-		<p class="description"><?php echo sprintf( __( 'The <strong>WooCommerce</strong> cart fragments script can be very resource-intensive. If you remove this, don\'t forget to <a href="%s" target="_blank">adjust the cart behaviour</a> to redirect to the cart page after successful addition.', 'trimpress' ), esc_url( $cart_settings_url ) ); ?></p>
+		<p class="description"><?php echo sprintf( __( 'The <strong>WooCommerce</strong> cart fragments script can be very resource-intensive. If you remove this, don\'t forget to <a href="%s" target="_blank">adjust the cart behaviour</a> to redirect to the cart page after adding a product.', 'trimpress' ), esc_url( $cart_settings_url ) ); ?></p>
 
 		<?php
 	}
@@ -243,7 +243,7 @@ class Settings {
   		
 		<label for="trimpress_settings[heartbeat]"><?php _e( 'Reduce', 'trimpress' ); ?></label>
 
-		<p class="description"><?php echo sprintf( __( 'Reduce the frequency of the <a href="%s">WordPress heartbeat API</a> to pulse <strong>once every 60 seconds</strong> (the default interval is 15 seconds). This can significantly reduce admin-ajax usage.', 'trimpress' ), esc_url( $heartbeat_url ) ); ?></p>
+		<p class="description"><?php echo sprintf( __( 'Reduce the frequency of the <a href="%s">Heartbeat API</a> to pulse <strong>once every 60 seconds</strong> (the default interval is 15 seconds). This can significantly reduce admin-ajax usage.', 'trimpress' ), esc_url( $heartbeat_url ) ); ?></p>
 
 		<?php
 	}
@@ -307,7 +307,7 @@ class Settings {
   		
 		<label for="trimpress_settings[shortlink]"><?php _e( 'Remove', 'trimpress' ); ?></label>
 
-		<p class="description"><?php _e( 'This will remove the post shortlink url, if present.', 'trimpress' ); ?></p>
+		<p class="description"><?php _e( 'This will remove the post <code>shortlink</code> url, if present.', 'trimpress' ); ?></p>
 
 		<?php
 	}
@@ -355,7 +355,7 @@ class Settings {
   		
 		<label for="trimpress_settings[xmlrpc]"><?php _e( 'Disable', 'trimpress' ); ?></label>
 
-		<p class="description"><?php _e( 'Disables the <code>XML-RPC</code> interface, an older system for remote WordPress access that can be exploited by hackers. Used by Jetpack and the WordPress smartphone app so disable with caution.', 'trimpress' ); ?></p>
+		<p class="description"><?php _e( 'Disables the <code>XML-RPC</code> interface, an older system for remote WordPress access that can be exploited by hackers. If you don\'t use <strong>Jetpack</strong> or the <strong>WordPress App</strong> it\'s generally safe to disable.', 'trimpress' ); ?></p>
 
 		<?php
 	}
