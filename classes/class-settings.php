@@ -102,6 +102,14 @@ class Settings {
 		);
 
 		add_settings_field(
+			'revisions',
+			'Post Revisions',
+			array( $this, 'revisions_cb' ),
+			'trimpress',
+			'section_trim'
+		);
+
+		add_settings_field(
 			'shortlink',
 			'Post Shortlinks',
 			array( $this, 'shortlink_cb' ),
@@ -188,13 +196,14 @@ class Settings {
 	 */
 	public function editors_cb() {
 		$this->indicate_safety( 1 );
+		$file_edit_url = 'https://wordpress.org/support/article/editing-wp-config-php/#disable-the-plugin-and-theme-editor';
 		?>
 
 		<input type="checkbox" name="trimpress_settings[editors]" value="1" <?php checked( isset( $this->options['editors'] ) ); ?>>
   		
 		<label for="trimpress_settings[emojis]"><?php _e( 'Disable', 'trimpress' ); ?></label>
 
-		<p class="description"><?php _e( 'Disable the built-in WordPress code editors that allow users to modify plugin and theme code.', 'trimpress' ); ?></p>
+		<p class="description"><?php echo sprintf( __( 'Disable the built-in WordPress code editors that allow users to modify plugin and theme code. If this setting has <strong>no effect</strong>, it means the <a href="%s" target="_blank">file edit constant</a> has already been set elsewhere (e.g. in your <strong>wp-config</strong>).', 'trimpress' ), esc_url( $file_edit_url ) ); ?></p>
 
 		<?php
 	}
@@ -265,6 +274,39 @@ class Settings {
 	}
 
 	/**
+	 * The revisions field callback.
+	 */
+	public function revisions_cb() {
+		$this->indicate_safety( 1 );
+		$revisions_url = 'https://wordpress.org/support/article/editing-wp-config-php/#disable-post-revisions';
+		?>
+
+		<input type="checkbox" name="trimpress_settings[revisions]" value="1" <?php checked( isset( $this->options['revisions'] ) ); ?>>
+  		
+		<label for="trimpress_settings[revisions]"><?php _e( 'Limit', 'trimpress' ); ?></label>
+
+		<p class="description"><?php echo sprintf( __( 'Unlimited post revisions (the default) can cause database bloat. This limits post revisions to a <strong>5</strong>. If this setting has <strong>no effect</strong>, it either means the <a href="%s" target="_blank">post revisions constant</a> has already been set (e.g. in your <strong>wp-config</strong>), or you need to create a new revision.', 'trimpress' ), esc_url( $revisions_url ) ); ?></p>
+
+		<?php
+	}
+
+	/**
+	 * The shortlink field callback.
+	 */
+	public function shortlink_cb() {
+		$this->indicate_safety( 1 );
+		?>
+
+		<input type="checkbox" name="trimpress_settings[shortlink]" value="1" <?php checked( isset( $this->options['shortlink'] ) ); ?>>
+  		
+		<label for="trimpress_settings[shortlink]"><?php _e( 'Remove', 'trimpress' ); ?></label>
+
+		<p class="description"><?php _e( 'This will remove the post <code>shortlink</code> url, if present.', 'trimpress' ); ?></p>
+
+		<?php
+	}
+
+	/**
 	 * The auto_rss field callback.
 	 */
 	public function auto_rss_cb() {
@@ -292,22 +334,6 @@ class Settings {
 		<label for="trimpress_settings[rsd]"><?php _e( 'Remove', 'trimpress' ); ?></label>
 
 		<p class="description"><?php _e( 'This will remove the <strong>Really Simple Discovery</strong> (RSD) service endpoint link used for automatic pingbacks.', 'trimpress' ); ?></p>
-
-		<?php
-	}
-
-	/**
-	 * The shortlink field callback.
-	 */
-	public function shortlink_cb() {
-		$this->indicate_safety( 1 );
-		?>
-
-		<input type="checkbox" name="trimpress_settings[shortlink]" value="1" <?php checked( isset( $this->options['shortlink'] ) ); ?>>
-  		
-		<label for="trimpress_settings[shortlink]"><?php _e( 'Remove', 'trimpress' ); ?></label>
-
-		<p class="description"><?php _e( 'This will remove the post <code>shortlink</code> url, if present.', 'trimpress' ); ?></p>
 
 		<?php
 	}

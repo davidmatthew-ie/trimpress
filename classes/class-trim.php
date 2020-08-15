@@ -26,6 +26,7 @@ class Trim {
 	 * The class constructor.
 	 */
 	public function __construct() {
+		$this->file_edit_is_defined = defined( 'DISALLOW_FILE_EDIT' );
         $this->clean_up();
 	}
 	
@@ -45,7 +46,7 @@ class Trim {
 			}
 		}
 
-		if ( isset( $options['editors'] ) && $options['editors'] === '1' && ! defined( 'DISALLOW_FILE_EDIT' ) ) {
+		if ( ! defined( 'DISALLOW_FILE_EDIT' ) && isset( $options['editors'] ) && $options['editors'] === '1' ) {
 			define( 'DISALLOW_FILE_EDIT', true );
 		}
  
@@ -70,6 +71,11 @@ class Trim {
 		if ( ! is_admin() && isset( $options['oembed'] ) && $options['oembed'] === '1' ) {
 			add_action( 'wp_footer', array( $this, 'disable_oembed' ), 11 );
 		}
+
+		if ( ! defined( 'WP_POST_REVISIONS' ) && isset( $options['revisions'] ) && $options['revisions'] === '1' ) {
+			define( 'WP_POST_REVISIONS', 5 );
+		}
+		
 
 		if ( ! is_admin() && isset( $options['shortlink'] ) && $options['shortlink'] === '1' ) {
 			remove_action( 'wp_head', 'wp_shortlink_wp_head' );

@@ -4,7 +4,7 @@
  *
  * @package           TrimPress
  * Plugin Name:       TrimPress
- * Description:       Trim some of the cruft from WordPress for a lighter, more secure and performant theme!
+ * Description:       Trim some of the cruft from WordPress for a lighter, more secure theme!
  * Version:           1.0.0
  * Author:            David Matthew
  * Author URI:        https://davidmatthew.ie
