@@ -37,7 +37,8 @@ TrimPress optimizes and trims some of the cruft from WordPress for a lighter, mo
 
 == Screenshots ==
 
-(To be added)
+1. The first set of options.
+2. The second set of options.
 
 == Changelog ==
 
