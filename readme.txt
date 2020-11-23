@@ -4,7 +4,7 @@ Tags: optimization, tweaks, heartbeat, cart fragments, security
 Requires at least: 5.0
 Tested up to: 5.5
 Requires PHP: 7.0
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GNU GPL v3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -41,6 +41,9 @@ TrimPress optimizes and trims some of the cruft from WordPress for a lighter, mo
 2. The second set of options.
 
 == Changelog ==
+
+= 1.0.1 =
+* Added full translation support.
 
 = 1.0.0 =
 * Initial release.

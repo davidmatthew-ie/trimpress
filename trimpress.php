@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Current plugin version, manually defined for performance reasons.
-define( 'TRIMPRESS_VERSION', '1.0.0' );
+define( 'TRIMPRESS_VERSION', '1.0.1' );
 
 // Load the core plugin class and create a plugin instance.
 require plugin_dir_path( __FILE__ ) . 'classes/class-trimpress.php';

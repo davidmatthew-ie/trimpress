@@ -35,7 +35,7 @@ class Admin {
     public function create_submenu() {
         add_submenu_page(
             'options-general.php',
-            'TrimPress Settings',
+            __( 'TrimPress Settings', 'trimpress' ),
             'TrimPress',
             'manage_options',
             'trimpress',
@@ -90,10 +90,10 @@ class Admin {
 				
 				<?php 
 				
-				$green_explainer = '<strong>Green</strong> indicates a setting is completely safe to implement.';
-				$blue_explainer = '<strong>Blue</strong> indicates you should proceed with more caution and know the implications.';
+				$green_explainer = __( '<strong>Green</strong> indicates a setting is completely safe to implement.', 'trimpress' );
+				$blue_explainer  = __( '<strong>Blue</strong> indicates you should proceed with more caution and know the implications.', 'trimpress' );
 				
-				echo sprintf( __( '<span></span> %s<br><span></span> %s', 'trimpress'), $green_explainer, $blue_explainer );
+				echo sprintf( '<span></span> %s<br><span></span> %s', $green_explainer, $blue_explainer );
 				
 				?>
 				
@@ -112,7 +112,7 @@ class Admin {
 			<?php
 			settings_fields( 'trimpress' );
 			do_settings_sections( 'trimpress' );
-			submit_button( 'Save Settings' );
+			submit_button( __( 'Save Settings', 'trimpress' ) );
 			?>
 
 			</form>

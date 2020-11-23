@@ -45,7 +45,7 @@ class Settings {
 
 		add_settings_field(
 			'adj_posts',
-			'Adjacent Post Links',
+			__( 'Adjacent Post Links', 'trimpress' ),
 			array( $this, 'adj_posts_cb' ),
 			'trimpress',
 			'section_trim'
@@ -54,7 +54,7 @@ class Settings {
 		if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
 		    add_settings_field(
 				'wc_cart_fragments',
-				'Cart Fragments',
+				__( 'Cart Fragments', 'trimpress' ),
 				array( $this, 'wc_cart_fragments_cb' ),
 				'trimpress',
 				'section_trim'
@@ -63,7 +63,7 @@ class Settings {
 
 		add_settings_field(
 			'editors',
-			'Code Editors',
+			__( 'Code Editors', 'trimpress' ),
 			array( $this, 'editors_cb' ),
 			'trimpress',
 			'section_trim'
@@ -71,7 +71,7 @@ class Settings {
 
 		add_settings_field(
 			'comment_links',
-			'Comment Autolinks',
+			__( 'Comment Autolinks', 'trimpress' ),
 			array( $this, 'comment_links_cb' ),
 			'trimpress',
 			'section_trim'
@@ -103,7 +103,7 @@ class Settings {
 
 		add_settings_field(
 			'revisions',
-			'Post Revisions',
+			__( 'Post Revisions', 'trimpress' ),
 			array( $this, 'revisions_cb' ),
 			'trimpress',
 			'section_trim'
@@ -111,7 +111,7 @@ class Settings {
 
 		add_settings_field(
 			'shortlink',
-			'Post Shortlinks',
+			__( 'Post Shortlinks', 'trimpress' ),
 			array( $this, 'shortlink_cb' ),
 			'trimpress',
 			'section_trim'
@@ -119,7 +119,7 @@ class Settings {
 
 		add_settings_field(
 			'rsd',
-			'RSD Link',
+			__( 'RSD Link', 'trimpress' ),
 			array( $this, 'rsd_cb' ),
 			'trimpress',
 			'section_trim'
@@ -127,7 +127,7 @@ class Settings {
 
 		add_settings_field(
 			'auto_rss',
-			'RSS Links',
+			__( 'RSS Links', 'trimpress' ),
 			array( $this, 'auto_rss_cb' ),
 			'trimpress',
 			'section_trim'
@@ -135,7 +135,7 @@ class Settings {
 
 		add_settings_field(
 			'version',
-			'Version Info',
+			__( 'Version Info', 'trimpress' ),
 			array( $this, 'version_cb' ),
 			'trimpress',
 			'section_trim'
@@ -143,7 +143,7 @@ class Settings {
 	
 		add_settings_field(
 			'wlwmanifest',
-			'WLW Manifest Link',
+			__( 'WLW Manifest Link', 'trimpress' ),
 			array( $this, 'wlwmanifest_cb' ),
 			'trimpress',
 			'section_trim'
