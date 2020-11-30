@@ -121,6 +121,9 @@ class Admin {
 
 		<script>
 
+		/**
+	 	 * The select all/none functionality.
+		 */
 		let btn = document.getElementById('btn-all-none');
 		let opt = document.getElementById('opt-all-none');
 		let checkboxes = document.querySelectorAll('.trimpress-admin input[type="checkbox"]');
