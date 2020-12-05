@@ -326,7 +326,7 @@ class Settings {
 	 * The rsd field callback.
 	 */
 	public function rsd_cb() {
-		$this->indicate_safety( 2 );
+		$this->indicate_safety( 1 );
 		?>
 
 		<input type="checkbox" name="trimpress_settings[rsd]" value="1" <?php checked( isset( $this->options['rsd'] ) ); ?>>

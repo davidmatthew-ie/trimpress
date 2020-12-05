@@ -1,6 +1,6 @@
 === TrimPress ===
 Contributors: davidmatthew
-Tags: optimization, tweaks, heartbeat, cart fragments, security
+Tags: heartbeat, cart fragments, emojis, oembed, xml-rpc
 Requires at least: 5.0
 Tested up to: 5.6
 Requires PHP: 7.0
