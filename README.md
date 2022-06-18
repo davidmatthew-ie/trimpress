@@ -11,7 +11,6 @@ TrimPress optimizes and trims some of the cruft from WordPress for a lighter, mo
 * Remove unnecessary clutter from the WordPress `<head>` section, like RSS, RSD, WLW manifest and adjacent post links.
 * Disable the built-in WordPress code editors that allow users to modify plugin and theme code.
 * Limit post revisions, which can cause unnecessary database bloat.
-* Remove the oEmbed script which transforms YouTube, Twitter and other social links into embedded media by automatically fetching extra scripts and styles from these sites.
 * Disable automatic emoji rendering, which adds several extra scripts and styles to your site.
 * Disable the XML-RPC interface, an older system for remote WordPress access that can be exploited by hackers. 
 * Remove the meta generator tag and version url parameters that let potential attackers know what WordPress version you're using.
