@@ -2,7 +2,7 @@
 Contributors: davidmatthew
 Tags: heartbeat, cart fragments, emojis, oembed, xml-rpc
 Requires at least: 5.0
-Tested up to: 6.1
+Tested up to: 6.3
 Requires PHP: 7.0
 Stable tag: 1.1
 License: GNU GPL v3

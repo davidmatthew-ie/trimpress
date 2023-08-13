@@ -2,7 +2,7 @@
 
 #### Description
 
-TrimPress optimizes and trims some of the cruft from WordPress for a lighter, more secure theme!
+TrimPress optimizes and trims some of the cruft from WordPress for a lighter, more secure theme. Find it [here](https://wordpress.org/plugins/trimpress/) at the WordPress plugin repository.
 
 #### Features
 
