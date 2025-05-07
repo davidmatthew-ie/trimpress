@@ -2,9 +2,9 @@
 Contributors: davidmatthew
 Tags: heartbeat, cart fragments, emojis, oembed, xml-rpc
 Requires at least: 5.0
-Tested up to: 6.3
+Tested up to: 6.8
 Requires PHP: 7.0
-Stable tag: 1.1
+Stable tag: 1.1.1
 License: GNU GPL v3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -40,6 +40,9 @@ TrimPress optimizes and trims some of the cruft from WordPress for a lighter, mo
 2. The second set of options.
 
 == Changelog ==
+
+= 1.1.1 =
+* Fixed bug with dynamic class property.
 
 = 1.1 =
 * Fixed bug with heartbeat setting.
