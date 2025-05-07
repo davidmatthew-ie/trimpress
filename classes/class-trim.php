@@ -26,8 +26,7 @@ class Trim {
 	 * The class constructor.
 	 */
 	public function __construct() {
-		$this->file_edit_is_defined = defined( 'DISALLOW_FILE_EDIT' );
-        $this->clean_up();
+		$this->clean_up();
 	}
 	
 	/**
@@ -99,7 +98,6 @@ class Trim {
 		if ( isset( $options['xmlrpc'] ) && $options['xmlrpc'] === '1' ) {
 			add_filter( 'xmlrpc_enabled', '__return_false' );
 		}
-		
 	}
 
 	/**
